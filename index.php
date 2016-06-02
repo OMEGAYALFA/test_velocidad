@@ -19,9 +19,12 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 								   							    var time      = Math.round((d.getTime()-time1)/10)/100;
 														        var connSpeed = Math.round(tamano_KB/time);
 														        var prog        = document.getElementById('progress');
-														        prog.innerHTML  = "Total time: \t\t\t"+time+" second"+
-																				  "\nTotal Kbps: \t\t\t"+tamano_KB+" Kb"+
-																				  "\Velocidad conexion: \t"+connSpeed+" kBps";
+
+														        prog.innerHTML   = "Su velocidad de conexión es de: "+connSpeed+" Kbps \n";
+														        prog.innerHTML  += "Se enviarón: "+tamano_KB+" Kb \n";
+														        prog.innerHTML  += "Tiempo utilizado: "+time+" Segundos \n";
+														        prog.innerHTML  += "Ping a: "+<?= $_SERVER["REMOTE_ADDR"]?>+" Segundos \n";
+
     					       							   },
     			    		   requestHeaders:['X-Update', id_cargar]
     			     		   }
