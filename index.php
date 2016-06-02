@@ -23,7 +23,7 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 														        prog.innerHTML   = "Su velocidad de conexión es de: "+connSpeed+" Kbps \n";
 														        prog.innerHTML  += "Se enviarón: "+tamano_KB+" Kb \n";
 														        prog.innerHTML  += "Tiempo utilizado: "+time+" Segundos \n";
-														        prog.innerHTML  += "Ping a: <?= $_SERVER["REMOTE_ADDR"]?> \n";
+														        prog.innerHTML  += "Ping a: <?= $_SERVER["HTTP_X_FORWARDED_FOR"]?> \n";
 
     					       							   },
     			    		   requestHeaders:['X-Update', id_cargar]
