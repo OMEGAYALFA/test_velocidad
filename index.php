@@ -20,10 +20,10 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 														        var connSpeed = Math.round(tamano_KB/time);
 														        var prog        = document.getElementById('progress');
 
-														        prog.innerHTML   = "Su velocidad de conexión es de: "+connSpeed+" Kbps \n";
-														        prog.innerHTML  += "Se enviarón: "+tamano_KB+" Kb \n";
-														        prog.innerHTML  += "Tiempo utilizado: "+time+" Segundos \n";
-														        prog.innerHTML  += "Ping a: "+document.getElementById('ip').value+"\n";
+														        prog.innerHTML   = "Su velocidad de conexión es de: "+connSpeed+" Kbps, \n";
+														        prog.innerHTML  += "Se enviarón: "+tamano_KB+" Kb, \n";
+														        prog.innerHTML  += "Tiempo utilizado: "+time+" Segundos, \n";
+														        prog.innerHTML  += "Ping a: "+document.getElementById('my-ip').innerHTML+"\n";
 
     					       							   },
     			    		   requestHeaders:['X-Update', id_cargar]
@@ -36,7 +36,7 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 		<button onclick="medir_velocidad('cargar_bytes.php','resultado',this.value);">Test 1</button>
 		<div id="progress" style="width:400px; border:thin solid black; overflow:scroll; height:200px;"></div>
 		<div id="resultado" style="display:none"></div>
-	    Ping ip: <strong id="my-ip"></strong>
+	    <div id="ip" style="display:none"><strong id="my-ip"></strong></div>
 		<script type="text/javascript">
 		    function get_ip(obj)
 		    {
