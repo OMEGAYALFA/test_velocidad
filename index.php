@@ -21,7 +21,7 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 														        var prog        = document.getElementById('progress');
 														        prog.innerHTML  = "Total time: \t\t\t"+time+" second"+
 																				  "\nTotal Kbps: \t\t\t"+tamano_KB+" Kb"+
-																				  "\nConnection speed: \t"+connSpeed+" kBps";
+																				  "\Velocidad conexion: \t"+connSpeed+" kBps";
     					       							   },
     			    		   requestHeaders:['X-Update', id_cargar]
     			     		   }
