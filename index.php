@@ -7,7 +7,7 @@
 function checkUploadSpeed( iterations, update ) {
     var average = 0,
         index = 0,
-        timer = window.setInterval( check, 10000 ); //check every 10 seconds
+        timer = window.setInterval( check, 15000 ); //check every 15 seconds
         check();
 
     function check() {
@@ -82,11 +82,17 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 </script>
 </head>
 	<body>
-		<button onclick="medir_velocidad('cargar_bytes.php','resultado',this.value);">Test 1</button>
+
+	    <h1>TEST REALIZADO POR JUAN PACHECO FREELANCE 2 de junio del 2016 @Venezuela</h1>
+	    <br>
+		<button onclick="medir_velocidad('cargar_bytes.php','resultado',this.value);">Test download</button>
+		<br><br>
 		<div id="progress" style="width:400px; border:thin solid black; overflow:scroll; height:200px;"></div>
 
-		<div id="speed">speed: 0kbs</div>
-		<div id="average">average: 0kbs</div>
+         <p>velocidad de Upload:</p>
+
+			<div id="speed">speed: 0kbs</div>
+			<div id="average">average: 0kbs</div>
 
 		<div id="resultado" style="display:none"></div>
 	    <div id="ip" style="display:none"><strong id="my-ip"></strong></div>
