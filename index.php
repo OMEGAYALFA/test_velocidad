@@ -7,7 +7,7 @@
 function checkUploadSpeed( iterations, update ) {
     var average = 0,
         index = 0,
-        timer = window.setInterval( check, 5000 ); //check every 5 seconds
+        timer = window.setInterval( check, 10000 ); //check every 10 seconds
         check();
 
     function check() {
@@ -69,7 +69,7 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 														        prog.innerHTML  += "Tiempo utilizado: "+time+" Segundos, \n";
 														        prog.innerHTML  += "Ping a: "+document.getElementById('my-ip').innerHTML+"\n";
 
-														        checkUploadSpeed( 5, function ( speed, average ) {
+														        checkUploadSpeed( 2, function ( speed, average ) {
 																    document.getElementById( 'speed' ).textContent = 'speed: ' + speed + 'kbs';
 																    document.getElementById( 'average' ).textContent = 'average: ' + average + 'kbs';
 																} );
