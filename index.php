@@ -65,13 +65,13 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 														        var prog        = document.getElementById('progress');
 
 														        prog.innerHTML   = "Su velocidad de conexión es de: "+connSpeed+" Kbps, \n";
-														        prog.innerHTML  += "Se enviarón: "+tamano_KB+" Kb, \n";
+														        prog.innerHTML  += "Se enviarón: "+(eval(tamano_KB/1000))+" Kb, \n";
 														        prog.innerHTML  += "Tiempo utilizado: "+time+" Segundos, \n";
 														        prog.innerHTML  += "Ping a: "+document.getElementById('my-ip').innerHTML+"\n";
 
-														        checkUploadSpeed( 2, function ( speed, average ) {
-																    document.getElementById( 'speed' ).textContent = 'speed: ' + speed + 'kbs';
-																    document.getElementById( 'average' ).textContent = 'average: ' + average + 'kbs';
+														        checkUploadSpeed( 1, function ( speed, average ) {
+																    document.getElementById( 'speed' ).textContent = 'speed: ' + (eval(speed/1000)) + 'kbs';
+																    //document.getElementById( 'average' ).textContent = 'average: ' + average + 'kbs';
 																} );
 
     					       							   },
@@ -81,8 +81,12 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 }
 </script>
 </head>
-	<body>
-
+	<body><script type="text/javascript">
+		    function get_ip(obj)
+		    {
+		        document.getElementById('my-ip').innerHTML = obj.ip;
+		    }
+		</script>
 	    <h1>TEST REALIZADO POR JUAN PACHECO FREELANCE 2 de junio del 2016 @Venezuela</h1>
 	    <br>
 		<button onclick="medir_velocidad('cargar_bytes.php','resultado',this.value);">Test download</button>
@@ -95,13 +99,7 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 			<div id="average">average: 0kbs</div>
 
 		<div id="resultado" style="display:none"></div>
-	    <div id="ip" style="display:none"><strong id="my-ip"></strong></div>
-		<script type="text/javascript">
-		    function get_ip(obj)
-		    {
-		        document.getElementById('my-ip').innerHTML = obj.ip;
-		    }
-		</script>
+	    <div id="ip" style=""><strong id="my-ip"></strong></div>
 		<script type="text/javascript" src="https://api.ipify.org/?format=jsonp&callback=get_ip"></script>
 	</body>
 </html>
