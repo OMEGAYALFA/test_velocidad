@@ -7,7 +7,7 @@
 function checkUploadSpeed( iterations, update ) {
     var average = 0,
         index = 0,
-        timer = window.setInterval( check, 15000 ); //check every 15 seconds
+        timer = window.setInterval( check, 25000 ); //check every 15 seconds
         check();
 
     function check() {
@@ -63,12 +63,12 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 								   							    var time      = Math.round((d.getTime()-time1)/10)/100;
 														        var connSpeed = Math.round(tamano_KB/time);
 														        var prog        = document.getElementById('progress');
-														        checkUploadSpeed( 1, function ( speed, average ) {
-																    prog.innerHTML   = "Ping a IP: "+document.getElementById('my-ip').innerHTML+"... <br>";
+														            prog.innerHTML   = "Ping a IP: "+document.getElementById('my-ip').innerHTML+"... <br>";
 																    prog.innerHTML  += "&nbsp; Su velocidad de conexion es de: "+(eval(connSpeed/1000))+" Mbps, <br>";
-																    prog.innerHTML  += "&nbsp; Su velocidad de Upload: "+(eval(speed/1000))+" Mbps, <br>";
 															        prog.innerHTML  += "&nbsp; Se enviaron: "+tamano_KB+" Kb, <br>";
 															        prog.innerHTML  += "&nbsp; Tiempo utilizado: "+time+" Segundos, <br>";
+														        checkUploadSpeed( 1, function ( speed, average ) {
+																    prog.innerHTML  += "&nbsp; Su velocidad de Upload: "+(eval(speed/1000))+" Mbps, <br>";
 																} );
 
     					       							   },
