@@ -64,13 +64,13 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 														        var connSpeed = Math.round(tamano_KB/time);
 														        var prog        = document.getElementById('progress');
 
-														        prog.innerHTML   = "Su velocidad de conexión es de: "+connSpeed+" Kbps, \n";
+														        prog.innerHTML   = "Su velocidad de conexión es de: "+connSpeed+" Mbps, \n";
 														        prog.innerHTML  += "Se enviarón: "+(eval(tamano_KB/1000))+" Kb, \n";
 														        prog.innerHTML  += "Tiempo utilizado: "+time+" Segundos, \n";
 														        prog.innerHTML  += "Ping a: "+document.getElementById('my-ip').innerHTML+"\n";
 
 														        checkUploadSpeed( 1, function ( speed, average ) {
-																    document.getElementById( 'speed' ).textContent = 'speed: ' + (eval(speed/1000)) + 'kbs';
+																    document.getElementById( 'speed' ).textContent = 'speed: ' + (eval(speed/1000)) + 'Mbps';
 																    //document.getElementById( 'average' ).textContent = 'average: ' + average + 'kbs';
 																} );
 
@@ -95,8 +95,8 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 
          <p>velocidad de Upload:</p>
 
-			<div id="speed">speed: 0kbs</div>
-			<div id="average">average: 0kbs</div>
+			<div id="speed">speed: 0Mbps</div>
+			<? /*<div id="average">average: 0kbs</div> */?>
 
 		<div id="resultado" style="display:none"></div>
 	    <div id="ip" style=""><strong id="my-ip"></strong></div>
