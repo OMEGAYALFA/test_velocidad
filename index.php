@@ -63,11 +63,11 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 								   							    var time      = Math.round((d.getTime()-time1)/10)/100;
 														        var connSpeed = Math.round(tamano_KB/time);
 														        var prog        = document.getElementById('progress');
-														            prog.innerHTML   = "Ping a IP: "+document.getElementById('my-ip').innerHTML+"... <br>";
-																    prog.innerHTML  += "&nbsp; Su velocidad de conexion es de: "+eval(connSpeed/125)+" Mbps, <br><br>";
+														            prog.innerHTML   = "Ping a IP: "+document.getElementById('my-ip').innerHTML+"... <br><br>";
+																    prog.innerHTML  += "&nbsp; Download Speed: "+eval(connSpeed/125)+" Mbps, <br><br>";
 															        prog.innerHTML  += "&nbsp; Calculando velocidad Upload..... <br><br>";
 														        checkUploadSpeed( 1, function ( speed, average ) {
-																    prog.innerHTML  += "&nbsp; Su velocidad de Upload: "+eval(speed/125)+" Mbps, <br>";
+																    prog.innerHTML  += "&nbsp; Upload Speed: "+eval(speed/125)+" Mbps, <br>";
 																} );
 
     					       							   },
@@ -89,6 +89,11 @@ function medir_velocidad(url_cargar,id_cargar,parametro_extra){
 		<br><br>
 		<div id="progress" style="width:400px; border:thin solid black; overflow:scroll; height:200px;"></div>
 		<div id="resultado" style="display:none"></div>
+		<?php
+		$comando = "ping -c 3 190.38.61.160";
+		$output = shell_exec($comando);
+		echo $output;
+		?>
 	    <div id="ip" style="display:none"><strong id="my-ip"></strong></div>
 		<script type="text/javascript" src="https://api.ipify.org/?format=jsonp&callback=get_ip"></script>
 	</body>
